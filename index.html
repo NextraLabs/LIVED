@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a0d">
+  <title>LIVED — Learn from what happened.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand">LIVED</a>
+  <button id="loginBtn" class="ghost-btn">Login</button>
+</header>
+
+<main>
+
+<section class="hero">
+  <p class="eyebrow">REAL HUMAN EXPERIENCES</p>
+
+  <h1>
+    Learn from<br>
+    <span>what happened.</span>
+  </h1>
+
+  <p class="sub">
+    Orang sudah menjalani sesuatu.
+    Kamu bisa belajar sebelum mengalaminya sendiri.
+  </p>
+
+  <form id="searchForm" class="search">
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Cari pengalaman... contoh: kerja di Jepang"
+    >
+    <button type="submit">Cari</button>
+  </form>
+</section>
+
+<section class="section">
+
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">EXPLORE</p>
+      <h2>Pengalaman nyata</h2>
+    </div>
+
+    <button id="shareBtn" class="primary-btn">
+      + Share Experience
+    </button>
+  </div>
+
+  <div id="categories" class="chips"></div>
+
+  <div id="experienceList" class="experience-list">
+    <div class="empty">Memuat pengalaman...</div>
+  </div>
+
+</section>
+
+</main>
+
+<dialog id="shareDialog">
+
+<form id="experienceForm" class="modal">
+
+  <div class="modal-head">
+
+    <div>
+      <p class="eyebrow">SHARE EXPERIENCE</p>
+      <h2>Ceritakan yang kamu jalani.</h2>
+    </div>
+
+    <button
+      type="button"
+      id="closeDialog"
+      class="icon-btn"
+    >×</button>
+
+  </div>
+
+  <label>
+    Judul
+
+    <input
+      name="title"
+      required
+      placeholder="Contoh: Aku resign dan mencoba kerja di Jepang"
+    >
+  </label>
+
+  <label>
+    Situasi
+
+    <textarea
+      name="situation"
+      required
+      placeholder="Apa kondisi kamu sebelum mengambil keputusan?"
+    ></textarea>
+  </label>
+
+  <label>
+    Keputusan
+
+    <textarea
+      name="decision"
+      required
+      placeholder="Apa yang kamu pilih atau lakukan?"
+    ></textarea>
+  </label>
+
+  <label>
+    Apa yang terjadi
+
+    <textarea
+      name="outcome"
+      required
+      placeholder="Apa hasil sebenarnya setelah kamu menjalani keputusan itu?"
+    ></textarea>
+  </label>
+
+  <label>
+    Pelajaran
+
+    <textarea
+      name="lesson"
+      required
+      placeholder="Apa yang kamu harap orang lain tahu?"
+    ></textarea>
+  </label>
+
+  <label>
+    Kategori
+
+    <select name="category_id" id="categorySelect">
+      <option value="">Pilih kategori</option>
+    </select>
+  </label>
+
+  <label class="check">
+    <input
+      type="checkbox"
+      name="is_anonymous"
+      checked
+    >
+
+    Bagikan secara anonim
+  </label>
+
+  <div id="formMessage" class="form-message"></div>
+
+  <div class="modal-actions">
+
+    <button
+      type="button"
+      id="cancelBtn"
+      class="ghost-btn"
+    >
+      Batal
+    </button>
+
+    <button
+      type="submit"
+      class="primary-btn"
+    >
+      Simpan Draft
+    </button>
+
+  </div>
+
+</form>
+
+</dialog>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
